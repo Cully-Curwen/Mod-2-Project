@@ -1,11 +1,9 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
   has_many :subscriptions
   has_many :past_payments
   has_many :bank_details
   has_many :card_details
   has_many :paypal_details
-=======
   has_secure_password
     validates :first_name, presence: true 
     validates :last_name, presence: true 
@@ -24,5 +22,4 @@ class User < ApplicationRecord
     #   pw_object == password
     # end
 
->>>>>>> master
 end
