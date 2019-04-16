@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :companies
   resources :card_details
   resources :paypal_details
   resources :bank_details
