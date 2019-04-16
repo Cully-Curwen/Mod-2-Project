@@ -1,0 +1,2 @@
+module PaypalDetailsHelper
+end
