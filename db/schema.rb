@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_04_16_123350) do
+=======
+ActiveRecord::Schema.define(version: 2019_04_16_175236) do
+>>>>>>> master
 
   create_table "bank_details", force: :cascade do |t|
     t.integer "user_id"
@@ -98,6 +102,10 @@ ActiveRecord::Schema.define(version: 2019_04_16_123350) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+<<<<<<< HEAD
+=======
+    t.string "password_digest"
+>>>>>>> master
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

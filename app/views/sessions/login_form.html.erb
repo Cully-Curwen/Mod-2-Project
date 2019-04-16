@@ -1,0 +1,18 @@
+<h1>LOG IN</h1>
+
+<%= flash[:notice] if flash[:notice] %>
+
+<%= form_for :user, url: "/login", method: "post" do |f|%>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :password %>
+  <%= f.password_field :password%><br>
+  <%= f.submit "Log In"%>
+<% end%>
+
+
+<h2>Register </h2>
+<button type="button">
+<%= link_to "register", new_user_path%>
+</button>
+<br>
