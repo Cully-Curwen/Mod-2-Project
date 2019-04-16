@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  base: MyString
+  timestamp: 2019-04-16 12:19:42
+  date: 2019-04-16
+  rates_GBP: 1.5
+  rates_USD: 1.5
+  rates_EUR: 1.5
+
+two:
+  base: MyString
+  timestamp: 2019-04-16 12:19:42
+  date: 2019-04-16
+  rates_GBP: 1.5
+  rates_USD: 1.5
+  rates_EUR: 1.5
