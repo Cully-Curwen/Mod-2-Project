@@ -1,0 +1,35 @@
+<h1> Profile </h1>
+
+<li><%=@user.first_name%></li>
+<li><%=@player.last_name%></li>
+<li><%=@player.email%></li>
+ <br>
+
+<button type="button">
+<%= link_to "Edit your player", edit_player_path %>
+</button>
+<br>
+
+
+<%# <%= button_to "Delete Player", {},  {method: :delete}%> 
+
+<%# 
+<%# 
+<p> Your games:
+<% @player.games.each do |game| %>
+  <li><%= game.room %> </li>
+<% end %></p>
+
+
+
+<h3> Create a game </h3>
+<%= form_for @player_game do |f| %>
+  <%= f.hidden_field :player_id, value: @player.id %>
+  <%= f.label :game_id%>
+  <%= f.collection_select :game_id, @games, :id, :room %>
+  <%= f.submit %>
+<% end %> <br>
+
+
+<!-- <a href="/players">Back to main!</a> --> 
+<%# <%= link_to "Back to main!", players_path %>  
