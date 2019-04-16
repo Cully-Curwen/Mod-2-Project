@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  company: one
+  product: MyString
+  billing_value: 1
+  billing_frequency: MyString
+  currency: one
+  contract_type: MyString
+  contract_start: 2019-04-16
+  contract_end: 2019-04-16
+  payment_method_type: MyString
+  payment_method_id: 1
+
+two:
+  user: two
+  company: two
+  product: MyString
+  billing_value: 1
+  billing_frequency: MyString
+  currency: two
+  contract_type: MyString
+  contract_start: 2019-04-16
+  contract_end: 2019-04-16
+  payment_method_type: MyString
+  payment_method_id: 1
