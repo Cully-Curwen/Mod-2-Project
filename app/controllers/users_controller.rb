@@ -1,34 +1,32 @@
 class UsersController < ApplicationController
-
-
-    def index
     
-    end
-
-    def new 
+    def new
         @user = User.new
-    end 
+      end
 
-    def create 
-        @user = User.new(user_params)
-        if  @user.valid?
-            @user.save
-            redirect_to user_path(@user)
-        else
-            render :new
-        end
+    def create
         # byebug
-    end
-
-    def show 
-    end
-
-
-private 
-    def user_params
-        params.require(:user).permit(:first_name,:last_name,:email)
-    end
-
-
-
+        @user = User.create(user_params)
+    
+        redirect_to @user 
+      end
+    
+     
+    
+      def show
+        @user = User.find(params[:id])
+      end
+    
+      def profile
+        if !@current_user
+          flash[:notice] = "Please sign in to continue!"
+          redirect_to "/login_form"
+        end
+      end
+    
+      private
+    
+      def user_params
+        params.require(:user).permit(:first_name,:last_name,:email,:password)
+      end
 end
