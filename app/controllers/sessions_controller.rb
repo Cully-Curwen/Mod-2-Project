@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
         # byebug
     if  user && user.authenticate(params[:user][:password])
 
-        session[:user_id] = user.id
+        session[:user_id] = user.id #! this bit of code is what creates the session
 
-        redirect_to profile_path
+        redirect_to current_user
     else
         flash[:notice] = "Wrong credentials! Try again"
         redirect_to "/login_form"

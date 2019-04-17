@@ -66,3 +66,6 @@ gem 'awesome_rails_console'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'

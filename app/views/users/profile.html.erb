@@ -1,1 +1,14 @@
 <h1> Your profile</h1>
+
+<h1>FORM TAG</h1>
+<%= form_tag players_path do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name%>
+  <%= label_tag :age %>
+  <%= number_field_tag :age, nil, placeholder: "Enter your age" %>
+  <%= label_tag :bio %>
+  <%= text_field_tag :bio, nil, placeholder: "Enter your bio" %>
+  <%= label_tag :special_skill %>
+  <%= text_field_tag :special_skill, nil, placeholder: "Enter your special skill" %>
+  <%= submit_tag "Create Player!" %>
+<% end %>
