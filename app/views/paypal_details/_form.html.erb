@@ -1,0 +1,6 @@
+<%= form_for @paypal_details do |f| %>
+  <%= f.label :account_email %>
+  <%= f.text_field :account_email %>
+  <br>
+  <%= f.submit "#{action}" %>
+<% end %>
