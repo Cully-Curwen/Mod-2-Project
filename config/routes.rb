@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'payment_method/index'
+  get 'payment_method/new'
   resources :users
   root to: 'sessions#login_form'
   resources :subscriptions
