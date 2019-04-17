@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: 'sessions#login_form'
   resources :subscriptions
   resources :companies
-  resources :card_details
-  resources :paypal_details
-  resources :bank_details
+  resources :card_details, only: [:new, :create, :edit, :update]
+  resources :paypal_details, only: [:new, :create, :edit, :update]
+  resources :bank_details, only: [:new, :create, :edit, :update]
   get "/login_form", to: "sessions#login_form"
   post "/login", to: "sessions#login", as: "login"
   get "/profile", to: "users#profile"
