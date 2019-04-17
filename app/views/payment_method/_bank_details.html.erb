@@ -1,0 +1,12 @@
+<div class="bank_details">
+  <h2>
+    <%= bank.bank_name %>
+  </h2>
+  <h4>
+    <%= bank.account_holder_name %>
+  </h4>
+  <h4>
+    <%= bank.account_name %>
+  </h4>
+  <%= button_to "Edit", { controller: "bank_details", action: "edit", id: bank.id }, method: "get" %>
+</div>
