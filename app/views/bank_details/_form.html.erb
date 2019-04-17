@@ -1,0 +1,12 @@
+<%= form_for @bank_details do |f| %>
+  <%= f.label :account_holder_name %>
+  <%= f.text_field :account_holder_name %>
+  <br>
+  <%= f.label :bank_name %>
+  <%= f.text_field :bank_name %>
+  <br>
+  <%= f.label :account_name %>
+  <%= f.text_field :account_name %>
+  <br>
+  <%= f.submit "#{action}" %>
+<% end %>
