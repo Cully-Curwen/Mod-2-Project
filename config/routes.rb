@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :bank_details
   get "/login_form", to: "sessions#login_form"
   post "/login", to: "sessions#login", as: "login"
-  get "/profile", to: "users#profile"
+  delete "/logout", to: "sessions#logout"
+  # get "/profile", to: "users#show"  as:  "profile"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
