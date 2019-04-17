@@ -33,7 +33,7 @@ BankDetail.create(
 )
 BankDetail.create(
     user_id: 2,
-    account_holder_name: "Dr No"
+    account_holder_name: "Dr No",
     bank_name: "To Big To Fail",
     account_name: "Current"
 )
