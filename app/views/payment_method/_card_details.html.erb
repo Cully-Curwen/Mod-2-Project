@@ -1,0 +1,12 @@
+<div class="card_details">
+  <h2>
+    <%= card.card_provider %>
+  </h2>
+  <h4>
+    <%= card.card_holder_name %>
+  </h4>
+  <h4>
+    <%= card.card_type %>
+  </h4>
+  <%= button_to "Edit", { controller: "card_details", action: "edit", id: card.id }, method: "get" %>
+</div>

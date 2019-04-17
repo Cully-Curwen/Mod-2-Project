@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_16_175236) do
+ActiveRecord::Schema.define(version: 2019_04_17_084827) do
 
   create_table "bank_details", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "account_holder_name"
+    t.string "bank_name"
+    t.string "account_name"
     t.index ["user_id"], name: "index_bank_details_on_user_id"
   end
 
@@ -23,6 +26,9 @@ ActiveRecord::Schema.define(version: 2019_04_16_175236) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "card_holder_name"
+    t.string "card_provider"
+    t.string "card_type"
     t.index ["user_id"], name: "index_card_details_on_user_id"
   end
 
@@ -72,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_04_16_175236) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "account_email"
     t.index ["user_id"], name: "index_paypal_details_on_user_id"
   end
 
