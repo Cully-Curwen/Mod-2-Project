@@ -1,2 +1,34 @@
-<h1>PaymentMethod#index</h1>
-<p>Find me in app/views/payment_method/index.html.erb</p>
+<h1>PaymentMethod</h1>
+
+<% if !@bank_details.empty? %>
+  <h2>Direct Debit Details</h2>
+  <ul>
+    <% @bank_details.each do |bank| %>
+      <li>
+        <%= render 'bank_details', bank: bank %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if !@card_details.empty? %>
+  <h2>Card Details</h2>
+  <ul>
+    <% @card_details.each do |card| %>
+      <li>
+        <%= render 'card_details', card: card %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if !@paypal_details.empty? %>
+  <h2>PayPal Details</h2>
+  <ul>
+    <% @paypal_details.each do |paypal| %>
+      <li>
+        <%= render 'paypal_details', paypal: paypal %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
