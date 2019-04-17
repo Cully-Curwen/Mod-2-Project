@@ -1,2 +1,23 @@
-<h1>PaymentMethod#new</h1>
-<p>Find me in app/views/payment_method/new.html.erb</p>
+<h1>Select what type of new payment method to create</h1>
+ <div class="payment_methods_select">
+   <ul>
+    <li>
+      <div class="select_box">
+        <h2>Direct Debit</h2>
+        <%= button_to "Add", { controller: "bank_details", action: "new" }, method: "get" %>
+      </div>
+    </li>
+    <li>
+      <div class="select_box">
+        <h2>Card</h2>
+        <%= button_to "Add", { controller: "card_details", action: "new" }, method: "get" %>
+      </div>
+    </li>
+    <li>
+      <div class="select_box">
+        <h2>PayPal</h2>
+        <%= button_to "Add", { controller: "paypal_details", action: "new" }, method: "get" %>
+      </div>
+    </li>
+   </ul>
+ </div> 
