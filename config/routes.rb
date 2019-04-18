@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   resources :users
-  root to: 'users#index'
   resources :companies
   resources :card_details, only: [:new, :create, :edit, :update]
   resources :paypal_details, only: [:new, :create, :edit, :update]
   resources :bank_details, only: [:new, :create, :edit, :update]
-  get "/login_form", to: "sessions#login_form"
-  post "/login", to: "sessions#login", as: "login"
   # payment_method routes
   get "payment_method/", to: "payment_method#index"
   get 'payment_method/new'
@@ -16,7 +13,12 @@ Rails.application.routes.draw do
   resources :subscriptions, only: [:index, :new, :create, :edit, :update]
   get "subscriptions/all", to: "subscriptions#all"
   post "subscriptions/store", to: "subscriptions#store"
-
+  # sessions routes
+  root to: 'sessions#splash'
+  get "/register", to: "sessions#register"
+  post "/create", to: "sessions#create"
+  get "/login_form", to: "sessions#login_form"
+  post "/login", to: "sessions#login", as: "login"
   delete "/logout", to: "sessions#logout"
   # get "/profile", to: "users#show"  as:  "profile"
 

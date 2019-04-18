@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def new
       @user = User.new
-   end
+  end
 #! These two are part of the registration process 
   def create
         # byebug
