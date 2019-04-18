@@ -35,13 +35,18 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Profile</a>
         </li>
-        <li class="nav-item"> <%=button_to "Log out", 
-      { 
-        action: "logout", 
-        controller: "sessions"},
-        method: "delete"
-        %>
-          <!--<a class="nav-link" href="#">Log out</a> -->
+        <li class="nav-item">
+          <%=link_to 
+            "Log out", 
+            { 
+              action: "logout", 
+              controller: "sessions",
+            },
+            {
+              method: "delete",
+              class: "nav-link"
+            }
+          %>
         </li>
       </ul>
     </div>
@@ -57,6 +62,7 @@
         method: "delete"
         %>
         <%end  %> -->
-    <%= yield %>
+    <div class="wrapper"><%= yield %></div>    
+    
   </body>
 </html>
