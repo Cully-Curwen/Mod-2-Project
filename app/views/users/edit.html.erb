@@ -1,4 +1,4 @@
-
+<!--
 <h1> Edit details </h1>
 <%= form_for @current_user do |d|%>
   <%= d.label :first_name %>
@@ -10,5 +10,51 @@
    <%= d.label :new_password, "New password"%>
   <%= d.password_field :new_password%><br>
   <%= d.submit "Edit"%>
-<% end%> <%= flash[:notice] if flash[:notice] %>
-  
+<% end%> <%= flash[:notice] if flash[:notice] %> -->
+ <br>
+<div class="container">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-12 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">Update  <small>your details!</small></h3>
+			 			</div>
+			 			<div class="panel-body">
+			    		<%= form_for @current_user do |d|%>
+                            <div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			                 <%= d.text_field :first_name %>
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+                       <%= d.text_field :last_name%>
+			    					</div>
+			    				</div>
+			    			</div>
+
+			    			<div class="form-group">
+			    				<%= d.text_field :email%>
+			    			</div>
+
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						 <%= d.password_field :password, placeholder: "password"%>
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						  <%= d.password_field :new_password, placeholder: "new password"%>
+			    					</div>
+			    				</div> 
+			    			</div>
+        
+			    			<input type="submit" name="commit" value="Edit" data-disable-with="Edit"class="btn btn-dark mb1 black bg-gray">
+			    		<%end%>  <%= flash[:notice] if flash[:notice] %>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
