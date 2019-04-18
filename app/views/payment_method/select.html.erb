@@ -6,7 +6,12 @@
     <% @bank_details.each do |bank| %>
       <li>
         <%= render 'bank_details', bank: bank %>
-        <%= button_to "Edit", { controller: "bank_details", action: "edit", id: bank.id }, method: "get" %>
+        <%= form_for @payment_method do |f| %>
+          <%= f.hidden_field :payment_method_id, value: bank.id %>
+          <%= f.hidden_field :payment_method_type, value: "Direct Debit" %>
+          <%= f.submit "Select", formaction: "store" %>
+        <% end %>
+        <%# button_to "Select", action: "store", method: "post" %>
       </li>
     <% end %>
   </ul>
@@ -18,8 +23,7 @@
     <% @card_details.each do |card| %>
       <li>
         <%= render 'card_details', card: card %>
-        <%= button_to "Edit", { controller: "card_details", action: "edit", id: card.id }, method: "get" %>
-      </li>
+        <%# button_to "Select", action: "store", method: "post" %>      </li>
     <% end %>
   </ul>
 <% end %>
@@ -30,7 +34,7 @@
     <% @paypal_details.each do |paypal| %>
       <li>
         <%= render 'paypal_details', paypal: paypal %>
-        <%= button_to "Edit", { controller: "paypal_details", action: "edit", id: paypal.id }, method: "get" %>
+        <%# button_to "Select", action: "store", method: "post" %>
       </li>
     <% end %>
   </ul>
