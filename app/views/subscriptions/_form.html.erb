@@ -26,6 +26,7 @@
   <br>
   <%= f.label :payment_method %>
   <%= f.submit "Use Existing Payment Method", formaction: 'store' %>
+  <%= f.submit "Add New Payment Method", formaction: 'store' %>
   <% if @payment_method %>
     <% case @subscription.payment_method_type %>
     <% when "Direct Debit" %>
