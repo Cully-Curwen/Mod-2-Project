@@ -23,6 +23,11 @@
     <% @card_details.each do |card| %>
       <li>
         <%= render 'card_details', card: card %>
+        <%= form_for @payment_method do |f| %>
+          <%= f.hidden_field :payment_method_id, value: card.id %>
+          <%= f.hidden_field :payment_method_type, value: "Card" %>
+          <%= f.submit "Select", formaction: "store" %>
+        <% end %>
         <%# button_to "Select", action: "store", method: "post" %>      </li>
     <% end %>
   </ul>
@@ -34,6 +39,11 @@
     <% @paypal_details.each do |paypal| %>
       <li>
         <%= render 'paypal_details', paypal: paypal %>
+        <%= form_for @payment_method do |f| %>
+          <%= f.hidden_field :payment_method_id, value: paypal.id %>
+          <%= f.hidden_field :payment_method_type, value: "PayPal" %>
+          <%= f.submit "Select", formaction: "store" %>
+        <% end %>
         <%# button_to "Select", action: "store", method: "post" %>
       </li>
     <% end %>

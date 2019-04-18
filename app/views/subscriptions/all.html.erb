@@ -1,4 +1,5 @@
-<div class="subscriptions_contianer">
+<%= render 'side_bar' %>
+<div class="main subscriptions_contianer">
   <% @subscriptions.each do |subscription| %>
     <%= render 'subs_box', subscription: subscription %>
   <% end %>
