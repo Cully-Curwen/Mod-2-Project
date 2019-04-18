@@ -33,7 +33,16 @@
           <a class="nav-link" href="#">Calender</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <%=link_to "profile", 
+            { 
+              action: @current_user_path, 
+              controller: "users",
+            },
+            {
+              method: "get",
+              class: "nav-link"
+            }  
+             %>                                   
         </li>
         <li class="nav-item">
           <%=link_to "Log out", 
@@ -53,14 +62,7 @@
 </nav>
 <%end  %>  
   
-  <!-- <%if @current_user%>
-       <%= button_to "Log out", 
-      { 
-        action: "logout", 
-        controller: "sessions"},
-        method: "delete"
-        %>
-        <%end  %> -->
+ 
     <div class="wrapper"><%= yield %></div>    
     
   </body>
