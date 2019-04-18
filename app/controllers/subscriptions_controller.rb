@@ -35,7 +35,6 @@ class SubscriptionsController < ApplicationController
       redirect_to subscriptions_all_path
     else
       # Error
-      byebug
       store = params_subscriptions.to_hash.select{ |key, value| !value.empty? }
       store.map do |key, value|
         session[:subscription][key] = value
