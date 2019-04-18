@@ -4,8 +4,18 @@ class CardDetailsController < ApplicationController
     @card_details = CardDetail.new
   end
 
+  def create
+    @card_details = BankDetail.create(params_card@card_details)
+    if @card_details.valid?
+      session[:subscription][:payment_method_type] = "Card"
+      session[:subscription][:payment_method_id] = @card_details.id
+      redirect_to controller: 'payment_method'
+    else
+      redirect_to new_bank_detail_path
+    end
+  end
+
   def edit
-    # secure logic to stop other user edditing
     @card_details = CardDetail.where(id: params[:id], user_id: @current_user.id).first!
   end
 

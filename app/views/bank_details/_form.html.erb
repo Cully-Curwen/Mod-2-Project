@@ -1,4 +1,5 @@
 <%= form_for @bank_details do |f| %>
+  <%= f.hidden_field :user_id, value: @current_user.id %>
   <%= f.label :account_holder_name %>
   <%= f.text_field :account_holder_name %>
   <br>
