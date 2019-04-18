@@ -1,0 +1,43 @@
+<%= form_for @subscription do |f| %>
+  <%= f.hidden_field :user_id, value: @current_user.id %>
+  <%= f.label :company_id %>
+  <%= f.collection_select :company_id, @companies, :id, :name %>
+  <br>
+  <%= f.label :product %>
+  <%= f.text_field :product %>
+  <br>
+  <%= f.label :billing_value %>
+  <%= f.number_field :billing_value %>
+  <br>
+  <%= f.label :billing_frequency %>
+  <%= f.select :billing_frequency, @billing_frequency %>
+  <br>
+  <%= f.label :currency_id %>
+  <%= f.collection_select :currency_id, @currency, :id, :base %>
+  <br>
+  <%= f.label :contract_type %>
+  <%= f.select :contract_type, @contract_type %>
+  <br>
+  <%= f.label :contract_start %>
+  <%= f.date_field :contract_start %>
+  <br>
+  <%= f.label :contract_end %>
+  <%= f.date_field :contract_end, placeholder: "Only needed for Fixed or Auto-Renew Contracts" %>
+  <br>
+  <%= f.label :payment_method %>
+  <%= f.submit "Use Existing Payment Method", formaction: 'store' %>
+  <% if @payment_method %>
+    <% case @subscription.payment_method_type %>
+    <% when "Direct Debit" %>
+      <%= render 'payment_method/bank_details', bank: @payment_method %>
+    <% when "Card" %>
+      <%= render 'payment_method/card_details', card: @payment_method %>
+    <% when "PayPal" %>
+      <%= render 'payment_method/paypal_details', paypal: @payment_method %>
+    <% end%>
+  <% end %>
+  <%= f.hidden_field :payment_method_type, value: @subscription.payment_method_type %>
+  <%= f.hidden_field :payment_method_id, value: @subscription.payment_method_id %>
+  <br>
+  <%= f.submit "#{action}" %>
+<% end %>

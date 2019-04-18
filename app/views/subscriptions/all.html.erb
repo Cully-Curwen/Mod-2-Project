@@ -1,0 +1,5 @@
+<div class="subscriptions_contianer">
+  <% @subscriptions.each do |subscription| %>
+    <%= render 'subs_box', subscription: subscription %>
+  <% end %>
+</div>

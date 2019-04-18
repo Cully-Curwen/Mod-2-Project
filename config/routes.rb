@@ -1,21 +1,26 @@
 Rails.application.routes.draw do
   resources :users
-  root to: 'sessions#login_form'
-  resources :subscriptions
+  root to: "subscriptions#all"
   resources :companies
-  resources :card_details
-  resources :paypal_details
-  resources :bank_details
+  resources :card_details, only: [:new, :create, :edit, :update]
+  resources :paypal_details, only: [:new, :create, :edit, :update]
+  resources :bank_details, only: [:new, :create, :edit, :update]
   get "/login_form", to: "sessions#login_form"
   post "/login", to: "sessions#login", as: "login"
-<<<<<<< HEAD
   # payment_method routes
-  get 'payment_method/', to: "payment_method#index"
+  get "payment_method/", to: "payment_method#index"
   get 'payment_method/new'
+  post 'payment_method/store', to: "payment_method#store"
+  get 'payment_method/select', to: "payment_method#select"
+  # subscriptions routes
+  resources :subscriptions, only: [:index, :new, :create, :edit, :update]
+  get "subscriptions/all", to: "subscriptions#all"
+  post "subscriptions/store", to: "subscriptions#store"
+
   
-=======
+
   delete "/logout", to: "sessions#logout"
   # get "/profile", to: "users#show"  as:  "profile"
->>>>>>> branch_4
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
