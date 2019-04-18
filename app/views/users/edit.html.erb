@@ -1,0 +1,14 @@
+
+<h1> Edit details </h1>
+<%= form_for @current_user do |d|%>
+  <%= d.label :first_name %>
+  <%= d.text_field :first_name %>
+  <%= d.label :last_name%>
+  <%= d.text_field :last_name%>
+  <%= d.label :password, "Old password"%>
+  <%= d.password_field :password%><br>
+   <%= d.label :new_password, "New password"%>
+  <%= d.password_field :new_password%><br>
+  <%= d.submit "Edit"%>
+<% end%> <%= flash[:notice] if flash[:notice] %>
+  

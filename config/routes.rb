@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :bank_details, only: [:new, :create, :edit, :update]
   get "/login_form", to: "sessions#login_form"
   post "/login", to: "sessions#login", as: "login"
-  get "/profile", to: "users#profile"
   # payment_method routes
   get "payment_method/", to: "payment_method#index"
   get 'payment_method/new'
@@ -17,5 +16,11 @@ Rails.application.routes.draw do
   resources :subscriptions, only: [:index, :new, :create, :edit, :update]
   get "subscriptions/all", to: "subscriptions#all"
   post "subscriptions/store", to: "subscriptions#store"
+
+  
+
+  delete "/logout", to: "sessions#logout"
+  # get "/profile", to: "users#show"  as:  "profile"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
