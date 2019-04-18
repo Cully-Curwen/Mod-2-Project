@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
     if  user && user.authenticate(params[:user][:password])
 
         session[:user_id] = user.id #! this bit of code is what creates the session
-
-        redirect_to current_user
+h = 0
+        redirect_to subscriptions_path
     else
         flash[:notice] = "Wrong credentials! Try again"
         redirect_to "/login_form"
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   def logout
       session[:user_id] = nil
 
-      redirect_to "/login_form"
+      redirect_to "/users"
   end
 
 

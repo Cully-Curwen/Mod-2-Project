@@ -16,7 +16,8 @@ class UsersController < ApplicationController
       @user =  User.new(user_params)
       if @user.valid?
           @user.save
-          redirect_to "/login_form"
+          session[:user_id] = @user.id 
+          redirect_to subscriptions_path
       else
         render :new
       end
