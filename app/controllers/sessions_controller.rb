@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     if  user && user.authenticate(params[:user][:password])
 
         session[:user_id] = user.id #! this bit of code is what creates the session
-
+h = 0
         redirect_to subscriptions_path
     else
         flash[:notice] = "Wrong credentials! Try again"
