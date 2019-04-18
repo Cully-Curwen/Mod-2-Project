@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController 
 
+
+    def login_form
+    
+    end
+    
     def login
         user = User.find_by(email: params[:user][:email])
         # byebug
@@ -15,9 +20,9 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    session[:user_id] = nil
+      session[:user_id] = nil
 
-    redirect_to "/login_form"
+      redirect_to "/login_form"
   end
 
 

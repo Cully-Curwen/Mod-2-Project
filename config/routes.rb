@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users
-  root to: "subscriptions#all"
+  root to: 'users#index'
   resources :companies
   resources :card_details, only: [:new, :create, :edit, :update]
   resources :paypal_details, only: [:new, :create, :edit, :update]
@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   resources :subscriptions, only: [:index, :new, :create, :edit, :update]
   get "subscriptions/all", to: "subscriptions#all"
   post "subscriptions/store", to: "subscriptions#store"
-
-  
 
   delete "/logout", to: "sessions#logout"
   # get "/profile", to: "users#show"  as:  "profile"
